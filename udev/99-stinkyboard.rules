@@ -1,0 +1,6 @@
+# Stelulu Stinky Gaming Footboard — USB 27e0:0101
+# Install: sudo cp 99-stinkyboard.rules /etc/udev/rules.d/ && sudo udevadm control --reload-rules
+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="27e0", ATTRS{idProduct}=="0101", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="27e0", ATTRS{idProduct}=="0101", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+KERNEL=="event*", SUBSYSTEM=="input", ATTRS{idVendor}=="27e0", ATTRS{idProduct}=="0101", MODE="0660", GROUP="plugdev", TAG+="uaccess"
